@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prakriti Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Prakriti Assessment Quiz</h1>
+        <p>Please answer the following questions to determine your Prakriti.</p>
+    </header>
+
+    <form id="quiz-form">
+        <!-- Physical Attributes -->
+        <h3>1. What is your body frame like?</h3>
+        <input type="radio" name="frame" value="Vata"> Thin and bony<br>
+        <input type="radio" name="frame" value="Pitta"> Medium and athletic<br>
+        <input type="radio" name="frame" value="Kapha"> Broad and heavy<br>
+
+        <h3>2. How is your skin texture?</h3>
+        <input type="radio" name="skin" value="Vata"> Dry and rough<br>
+        <input type="radio" name="skin" value="Pitta"> Warm and oily<br>
+        <input type="radio" name="skin" value="Kapha"> Soft and moist<br>
+
+        <h3>3. How is your hair type?</h3>
+        <input type="radio" name="hair" value="Vata"> Dry, frizzy, and thin<br>
+        <input type="radio" name="hair" value="Pitta"> Straight, thin, and oily<br>
+        <input type="radio" name="hair" value="Kapha"> Thick, wavy, and smooth<br>
+
+        <h3>4. How are your eyes?</h3>
+        <input type="radio" name="eyes" value="Vata"> Small and active<br>
+        <input type="radio" name="eyes" value="Pitta"> Medium and sharp<br>
+        <input type="radio" name="eyes" value="Kapha"> Large and calm<br>
+
+        <h3>5. How is your digestion?</h3>
+        <input type="radio" name="digestion" value="Vata"> Irregular, often gas or bloating<br>
+        <input type="radio" name="digestion" value="Pitta"> Strong and regular<br>
+        <input type="radio" name="digestion" value="Kapha"> Slow but steady<br>
+
+        <h3>6. How is your energy level throughout the day?</h3>
+        <input type="radio" name="energy" value="Vata"> Fluctuates, bursts of energy<br>
+        <input type="radio" name="energy" value="Pitta"> Consistent but drains quickly<br>
+        <input type="radio" name="energy" value="Kapha"> Steady but slow to start<br>
+
+        <h3>7. What is your weight trend?</h3>
+        <input type="radio" name="weight" value="Vata"> Hard to gain<br>
+        <input type="radio" name="weight" value="Pitta"> Easy to maintain<br>
+        <input type="radio" name="weight" value="Kapha"> Tends to gain easily<br>
+
+        <!-- Mental Characteristics -->
+        <h3>8. How do you react under stress?</h3>
+        <input type="radio" name="stress" value="Vata"> Anxious, worry a lot<br>
+        <input type="radio" name="stress" value="Pitta"> Irritated, easily frustrated<br>
+        <input type="radio" name="stress" value="Kapha"> Calm and patient<br>
+
+        <h3>9. How is your memory?</h3>
+        <input type="radio" name="memory" value="Vata"> Quick to learn but forget easily<br>
+        <input type="radio" name="memory" value="Pitta"> Sharp and clear<br>
+        <input type="radio" name="memory" value="Kapha"> Slow to learn but retains well<br>
+
+        <h3>10. How do you sleep?</h3>
+        <input type="radio" name="sleep" value="Vata"> Light and interrupted<br>
+        <input type="radio" name="sleep" value="Pitta"> Moderate, sometimes interrupted<br>
+        <input type="radio" name="sleep" value="Kapha"> Deep and long<br>
+
+        <h3>11. How do you make decisions?</h3>
+        <input type="radio" name="decisions" value="Vata"> Often indecisive, overthink<br>
+        <input type="radio" name="decisions" value="Pitta"> Quick and confident<br>
+        <input type="radio" name="decisions" value="Kapha"> Slow and thoughtful<br>
+
+        <h3>12. How do you handle criticism?</h3>
+        <input type="radio" name="criticism" value="Vata"> Get upset or worried<br>
+        <input type="radio" name="criticism" value="Pitta"> Get angry or defensive<br>
+        <input type="radio" name="criticism" value="Kapha"> Stay calm, let it go<br>
+
+        <!-- Preferences -->
+        <h3>13. What is your climate preference?</h3>
+        <input type="radio" name="climate" value="Vata"> Warm, dislike cold<br>
+        <input type="radio" name="climate" value="Pitta"> Cool, dislike heat<br>
+        <input type="radio" name="climate" value="Kapha"> Warm and dry<br>
+
+        <h3>14. How do you handle routine?</h3>
+        <input type="radio" name="routine" value="Vata"> Dislike routine, prefer variety<br>
+        <input type="radio" name="routine" value="Pitta"> Comfortable with routine<br>
+        <input type="radio" name="routine" value="Kapha"> Thrive on routine<br>
+
+        <!-- Diet and Food Preferences -->
+        <h3>15. What type of food do you prefer?</h3>
+        <input type="radio" name="food" value="Vata"> Light, crunchy, and dry<br>
+        <input type="radio" name="food" value="Pitta"> Spicy, oily, and salty<br>
+        <input type="radio" name="food" value="Kapha"> Sweet, heavy, and creamy<br>
+
+        <h3>16. How is your appetite?</h3>
+        <input type="radio" name="appetite" value="Vata"> Irregular, sometimes forget to eat<br>
+        <input type="radio" name="appetite" value="Pitta"> Strong, always hungry<br>
+        <input type="radio" name="appetite" value="Kapha"> Moderate but steady<br>
+
+        <h3>17. How thirsty are you?</h3>
+        <input type="radio" name="thirst" value="Vata"> Forget to drink water<br>
+        <input type="radio" name="thirst" value="Pitta"> Always thirsty<br>
+        <input type="radio" name="thirst" value="Kapha"> Steady, drink water regularly<br>
+
+        <h3>18. How often do you crave sweets?</h3>
+        <input type="radio" name="sweets" value="Vata"> Rarely<br>
+        <input type="radio" name="sweets" value="Pitta"> Occasionally<br>
+        <input type="radio" name="sweets" value="Kapha"> Often<br>
+
+        <!-- Personality -->
+        <h3>19. How do you handle work deadlines?</h3>
+        <input type="radio" name="deadlines" value="Vata"> Often procrastinate<br>
+        <input type="radio" name="deadlines" value="Pitta"> Take them very seriously<br>
+        <input type="radio" name="deadlines" value="Kapha"> Slow but steady<br>
+
+        <h3>20. How are your relationships?</h3>
+        <input type="radio" name="relationships" value="Vata"> Need space, can be distant<br>
+        <input type="radio" name="relationships" value="Pitta"> Passionate and intense<br>
+        <input type="radio" name="relationships" value="Kapha"> Loyal, stable, and caring<br>
+
+        <!-- Additional Personality Traits -->
+        <h3>21. How do you feel in crowded places?</h3>
+        <input type="radio" name="crowds" value="Vata"> Overwhelmed and anxious<br>
+        <input type="radio" name="crowds" value="Pitta"> Irritable but focused<br>
+        <input type="radio" name="crowds" value="Kapha"> Comfortable and calm<br>
+
+        <h3>22. How do you react to change?</h3>
+        <input type="radio" name="change" value="Vata"> Easily stressed<br>
+        <input type="radio" name="change" value="Pitta"> Adapt quickly but get frustrated<br>
+        <input type="radio" name="change" value="Kapha"> Dislike change, prefer stability<br>
+
+        <!-- Emotional Traits -->
+        <h3>23. How are your emotional tendencies?</h3>
+        <input type="radio" name="emotion" value="Vata"> Anxious and fearful<br>
+        <input type="radio" name="emotion" value="Pitta"> Angry and impatient<br>
+        <input type="radio" name="emotion" value="Kapha"> Calm and composed<br>
+
+        <h3>24. How do you deal with criticism or negativity?</h3>
+        <input type="radio" name="negativity" value="Vata"> Worry and overthink<br>
+        <input type="radio" name="negativity" value="Pitta"> Get defensive<br>
+        <input type="radio" name="negativity" value="Kapha"> Accept it calmly<br>
+
+        <!-- Behavior -->
+        <h3>25. How do you approach new tasks or challenges?</h3>
+        <input type="radio" name="tasks" value="Vata"> Enthusiastic but lose interest<br>
+        <input type="radio" name="tasks" value="Pitta"> Focused and competitive<br>
+        <input type="radio" name="tasks" value="Kapha"> Slow but consistent<br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
