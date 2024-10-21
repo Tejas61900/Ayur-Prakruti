@@ -3,82 +3,140 @@ body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
-    color: #333;
+    background-color: #f4f4f9; /* Light background for body */
+    color: #333; /* Default text color */
+    position: relative; /* Allow absolute positioning for elements */
 }
 
 /* Hero section styles */
 .hero {
-    background-image: url('images/hero-background.jpg'); /* Add a suitable hero image */
-    background-size: cover;
-    background-position: center;
-    height: 60vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-align: center;
-    position: relative;
+    background-image: url('/hero-background.jpg'); /* Hero image in root directory */
+    background-size: cover; /* Cover the entire area */
+    background-position: center; /* Center the background image */
+    height: 60vh; /* Height of hero section */
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    color: white; /* Text color in hero */
+    text-align: center; /* Center text */
+    position: relative; /* Allow layering */
 }
 
 .hero-content {
-    z-index: 2;
+    z-index: 2; /* Ensure hero content is above background */
 }
 
 .cta-button {
-    background-color: #48a999;
-    color: white;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 18px;
-    transition: background-color 0.3s ease;
+    background-color: #48a999; /* Call to action button color */
+    color: white; /* Button text color */
+    padding: 15px 30px; /* Padding inside button */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* No underline */
+    font-size: 18px; /* Font size for button text */
+    transition: background-color 0.3s ease; /* Smooth background change */
 }
 
 .cta-button:hover {
-    background-color: #3b8a80;
+    background-color: #3b8a80; /* Darker color on hover */
 }
 
 /* Main section styles */
 main {
-    padding: 20px;
+    padding: 20px; /* Padding for main section */
 }
 
 .info {
-    margin: 20px auto;
-    max-width: 600px;
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 20px auto; /* Centering info box */
+    max-width: 600px; /* Maximum width */
+    background-color: white; /* White background for info box */
+    padding: 20px; /* Padding inside info box */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow */
 }
 
+/* Styles for quiz */
+#quiz-form {
+    background-color: rgba(255, 255, 255, 0.9); /* White with transparency */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Padding for quiz form */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Light shadow */
+    max-width: 600px; /* Maximum width for quiz */
+    margin: 20px auto; /* Centering quiz form */
+    position: relative; /* Relative positioning for z-index */
+    z-index: 1; /* Above background */
+}
+
+/* Progress bar styles */
+.progress-bar {
+    width: 100%; /* Full width */
+    height: 10px; /* Height of progress bar */
+    background-color: #ddd; /* Background color of progress */
+    margin: 20px 0; /* Spacing around the progress bar */
+}
+
+.progress {
+    height: 100%; /* Full height */
+    width: 0%; /* Start at 0% width */
+    background-color: #2980b9; /* Progress color */
+}
+
+/* Dosha cards */
 .doshas {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin-top: 20px;
+    display: flex; /* Flexbox for dosha cards */
+    justify-content: space-between; /* Space between cards */
+    flex-wrap: wrap; /* Wrap cards if necessary */
+    margin-top: 20px; /* Margin above doshas */
 }
 
 .dosha-card {
-    background-color: white;
-    margin: 10px;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: white; /* White background for cards */
+    margin: 10px; /* Margin around cards */
+    padding: 15px; /* Padding inside cards */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow */
     flex: 1 1 30%; /* Flexbox to allow responsive cards */
 }
 
 .dosha-card img {
-    width: 100%;
-    border-radius: 5px;
+    width: 100%; /* Full width for images in cards */
+    border-radius: 5px; /* Rounded corners for images */
 }
 
+/* Footer styles */
 footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #48a999;
-    color: white;
-    position: relative;
+    text-align: center; /* Center text in footer */
+    padding: 20px; /* Padding for footer */
+    background-color: #48a999; /* Background color */
+    color: white; /* Text color */
+    position: relative; /* Allow layering */
+}
+
+/* Additional styles for quiz sections */
+h2 {
+    color: #2c3e50; /* Darker color for section headers */
+}
+
+h3 {
+    margin-top: 20px; /* Space between question titles */
+    color: #34495e; /* Slightly lighter for question titles */
+}
+
+label {
+    display: block; /* Stack labels vertically */
+    margin: 5px 0; /* Spacing between labels */
+}
+
+button {
+    background-color: #2980b9; /* Button color */
+    color: white; /* Button text color */
+    border: none; /* Remove border */
+    padding: 10px 15px; /* Button padding */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer on hover */
+    font-size: 16px; /* Font size for button text */
+}
+
+button:hover {
+    background-color: #3498db; /* Lighter on hover */
 }
