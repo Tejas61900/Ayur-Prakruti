@@ -19,8 +19,12 @@
             border-radius: 8px; /* Rounded corners */
             padding: 20px; /* Padding for quiz form */
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Light shadow */
-            max-width: 600px; /* Maximum width for quiz */
+            max-width: 800px; /* Maximum width for quiz */
             margin: 20px auto; /* Centering quiz form */
+        }
+
+        h2 {
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -34,47 +38,64 @@
 
     <main>
         <form id="quiz-form" onsubmit="return validateForm()">
-            <h2>Prakriti Quiz</h2>
+            <h2>Physical Characteristics</h2>
             
-            <!-- First few questions -->
-            <h3>1. Do you prefer cold or hot weather?</h3>
-            <label><input type="radio" name="q1" value="cold"> Cold</label>
-            <label><input type="radio" name="q1" value="hot"> Hot</label>
+            <h3>1. What is your body frame like?</h3>
+            <label><input type="radio" name="frame" value="Vata" required> Thin and bony</label><br>
+            <label><input type="radio" name="frame" value="Pitta" required> Medium and athletic</label><br>
+            <label><input type="radio" name="frame" value="Kapha" required> Broad and heavy</label><br>
 
-            <h3>2. How is your digestion?</h3>
-            <label><input type="radio" name="q2" value="fast"> Fast</label>
-            <label><input type="radio" name="q2" value="slow"> Slow</label>
+            <h3>2. How is your skin texture?</h3>
+            <label><input type="radio" name="skin" value="Vata" required> Dry and rough</label><br>
+            <label><input type="radio" name="skin" value="Pitta" required> Warm and oily</label><br>
+            <label><input type="radio" name="skin" value="Kapha" required> Soft and moist</label><br>
 
-            <!-- Additional questions -->
-            <h3>3. Do you feel restless or calm most of the time?</h3>
-            <label><input type="radio" name="q3" value="restless"> Restless</label>
-            <label><input type="radio" name="q3" value="calm"> Calm</label>
+            <h3>3. How is your hair type?</h3>
+            <label><input type="radio" name="hair" value="Vata" required> Thin and dry</label><br>
+            <label><input type="radio" name="hair" value="Pitta" required> Medium and smooth</label><br>
+            <label><input type="radio" name="hair" value="Kapha" required> Thick and oily</label><br>
 
-            <h3>4. How is your sleep quality?</h3>
-            <label><input type="radio" name="q4" value="deep"> Deep</label>
-            <label><input type="radio" name="q4" value="light"> Light</label>
+            <h3>4. What is your body temperature like?</h3>
+            <label><input type="radio" name="temperature" value="Vata" required> Usually cold</label><br>
+            <label><input type="radio" name="temperature" value="Pitta" required> Warm and hot</label><br>
+            <label><input type="radio" name="temperature" value="Kapha" required> Cool and comfortable</label><br>
 
-            <h3>5. How would you describe your energy levels?</h3>
-            <label><input type="radio" name="q5" value="high"> High</label>
-            <label><input type="radio" name="q5" value="low"> Low</label>
+            <h3>5. How is your digestion?</h3>
+            <label><input type="radio" name="digestion" value="Vata" required> Irregular and variable</label><br>
+            <label><input type="radio" name="digestion" value="Pitta" required> Strong and fast</label><br>
+            <label><input type="radio" name="digestion" value="Kapha" required> Slow and steady</label><br>
 
-            <h3>6. Do you gain weight easily?</h3>
-            <label><input type="radio" name="q6" value="yes"> Yes</label>
-            <label><input type="radio" name="q6" value="no"> No</label>
+            <!-- Section 2: Mental Characteristics -->
+            <h2>Mental Characteristics</h2>
 
-            <h3>7. How do you respond to stress?</h3>
-            <label><input type="radio" name="q7" value="calm"> Stay calm</label>
-            <label><input type="radio" name="q7" value="anxious"> Get anxious</label>
+            <h3>6. How do you react under stress?</h3>
+            <label><input type="radio" name="stress" value="Vata" required> Anxious, worry a lot</label><br>
+            <label><input type="radio" name="stress" value="Pitta" required> Irritated, easily frustrated</label><br>
+            <label><input type="radio" name="stress" value="Kapha" required> Calm and patient</label><br>
 
-            <h3>8. How's your skin texture?</h3>
-            <label><input type="radio" name="q8" value="dry"> Dry</label>
-            <label><input type="radio" name="q8" value="oily"> Oily</label>
+            <h3>7. How is your memory?</h3>
+            <label><input type="radio" name="memory" value="Vata" required> Quick but forgetful</label><br>
+            <label><input type="radio" name="memory" value="Pitta" required> Sharp and focused</label><br>
+            <label><input type="radio" name="memory" value="Kapha" required> Good but slow</label><br>
 
-            <!-- Add more questions as needed -->
+            <h3>8. How do you approach new experiences?</h3>
+            <label><input type="radio" name="experience" value="Vata" required> Excited and adventurous</label><br>
+            <label><input type="radio" name="experience" value="Pitta" required> Confident and driven</label><br>
+            <label><input type="radio" name="experience" value="Kapha" required> Cautious and reserved</label><br>
 
-            <!-- Continue to add all 25-30 questions in a similar manner -->
-            <!-- Ensure all questions have name attributes and are within form -->
+            <h3>9. How do you feel about change?</h3>
+            <label><input type="radio" name="change" value="Vata" required> Thrilled and eager</label><br>
+            <label><input type="radio" name="change" value="Pitta" required> Ready to take action</label><br>
+            <label><input type="radio" name="change" value="Kapha" required> Uncomfortable and resistant</label><br>
 
+            <h3>10. How would you describe your mood?</h3>
+            <label><input type="radio" name="mood" value="Vata" required> Variable, often changeable</label><br>
+            <label><input type="radio" name="mood" value="Pitta" required> Intense and passionate</label><br>
+            <label><input type="radio" name="mood" value="Kapha" required> Stable and peaceful</label><br>
+
+            <!-- Additional sections here -->
+            <!-- Each section has a title and similar radio button input structure -->
+            
             <button type="submit">Submit</button>
         </form>
     </main>
