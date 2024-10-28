@@ -36,29 +36,36 @@ document.addEventListener("DOMContentLoaded", function () {
             return; // Exit the function if validation fails
         }
 
-        // Create a certificate as a canvas
-        const certificate = document.createElement('canvas');
-        const ctx = certificate.getContext('2d');
-        certificate.width = 800;
-        certificate.height = 600;
+        // Create certificate content
+        const certificateContent = `
+            <div class="certificate">
+                <h2>Prakruti Assessment Certificate</h2>
+                <p><strong>Name:</strong> ${name}</p>
+                <p><strong>Age:</strong> ${age}</p>
+                <p><strong>Sex:</strong> ${sex}</p>
+                <p><strong>Address:</strong> ${address}</p>
+                <p><strong>Prakriti Result:</strong> ${maxDosha}</p>
+                <p>Thank you for completing the Prakruti Assessment!</p>
+            </div>
+        `;
 
-        // Draw the certificate background
-        ctx.fillStyle = "#ffffff";
-        ctx.fillRect(0, 0, certificate.width, certificate.height);
-        ctx.fillStyle = "#000000";
-        ctx.font = "30px Arial";
-        ctx.fillText("Certificate of Prakruti Assessment", 50, 100);
-        ctx.font = "20px Arial";
-        ctx.fillText(`Name: ${name}`, 50, 200);
-        ctx.fillText(`Age: ${age}`, 50, 240);
-        ctx.fillText(`Sex: ${sex}`, 50, 280);
-        ctx.fillText(`Address: ${address}`, 50, 320);
-        ctx.fillText(`Your dominant dosha is: ${maxDosha}`, 50, 360);
-
-        // Convert to image and download
-        const link = document.createElement('a');
-        link.href = certificate.toDataURL();
-        link.download = `${name}-certificate.png`;
-        link.click();
+        // Open certificate in new window
+        const certificateWindow = window.open('', '_blank');
+        certificateWindow.document.write(`
+            <html>
+            <head>
+                <title>Certificate</title>
+                <link rel="stylesheet" href="style.css">
+                <style>
+                    .certificate { padding: 30px; border: 5px solid #333; max-width: 600px; margin: auto; text-align: center; font-family: Arial, sans-serif; }
+                    .certificate h2 { color: #4CAF50; }
+                    .certificate p { font-size: 18px; }
+                </style>
+            </head>
+            <body>${certificateContent}</body>
+            </html>
+        `);
+        certificateWindow.document.close();
+        certificateWindow.print(); // Prompt the user to print the certificate
     });
 });
