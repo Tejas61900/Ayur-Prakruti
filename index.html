@@ -6,12 +6,104 @@
     <title>Prakriti Assessment</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Additional enhancements */
+        .hero {
+            background-image: url('hero-background.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            position: relative;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 0.5em;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            max-width: 700px;
+            margin: 0 auto 1em;
+            animation: fadeInUp 1.5s ease-in-out;
+        }
+
+        .hero .cta-button {
+            font-size: 1.2em;
+            padding: 15px 40px;
+            background-color: #48a999;
+            color: white;
+            border-radius: 50px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, transform 0.3s;
+            animation: fadeInUp 2s ease-in-out;
+        }
+
+        .hero .cta-button:hover {
+            background-color: #3b8a80;
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .info, .doshas {
+            text-align: center;
+            margin-top: 2em;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .doshas {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 30px;
+        }
+
+        .dosha-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .dosha-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            background-color: #48a999;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
+    </style>
 </head>
 <body>
     <header class="hero">
         <div class="hero-content">
             <h1>Discover Your Prakriti</h1>
-            <p>Understand your unique body constitution and achieve holistic well-being.</p>
+            <p>Embrace Ayurveda to understand your unique body constitution and lead a balanced, healthy life.</p>
             <a href="quiz.html" class="cta-button">Take the Quiz</a>
         </div>
     </header>
@@ -19,31 +111,31 @@
     <main>
         <section class="info">
             <h2>What is Prakriti?</h2>
-            <p>Prakriti refers to the unique constitution of an individual as per Ayurveda, determined by the balance of three doshas: Vata, Pitta, and Kapha. Understanding your Prakriti helps in making informed lifestyle choices that enhance health and well-being.</p>
+            <p>Prakriti is the unique constitution of an individual in Ayurveda, determined by the balance of three doshas: Vata, Pitta, and Kapha. Discovering your Prakriti can guide you in making personalized lifestyle choices for a healthier, happier you.</p>
         </section>
 
         <section class="doshas">
             <h2>The Three Doshas</h2>
             <div class="dosha-card">
                 <h3>Vata</h3>
-                <img src="vata.jpg" alt="Vata Dosha">
-                <p>Vata represents the elements of air and space. It governs movement, circulation, and communication.</p>
+                <img src="vata.jpg" alt="Vata Dosha" width="100%">
+                <p>Vata represents the elements of air and space, governing movement, circulation, and communication within the body.</p>
             </div>
             <div class="dosha-card">
                 <h3>Pitta</h3>
-                <img src="pitta.jpg" alt="Pitta Dosha">
-                <p>Pitta represents the elements of fire and water. It governs metabolism, transformation, and energy production.</p>
+                <img src="pitta.jpg" alt="Pitta Dosha" width="100%">
+                <p>Pitta embodies the fire and water elements, responsible for digestion, metabolism, and energy transformation.</p>
             </div>
             <div class="dosha-card">
                 <h3>Kapha</h3>
-                <img src="kapha.jpg" alt="Kapha Dosha">
-                <p>Kapha represents the elements of earth and water. It governs structure, stability, and nourishment.</p>
+                <img src="kapha.jpg" alt="Kapha Dosha" width="100%">
+                <p>Kapha, comprising earth and water elements, provides structure, stability, and nourishment to the body and mind.</p>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>Prakriti Assessment. All rights reserved.</p>
+        <p>&copy; 2024 Prakriti Assessment. All rights reserved.</p>
     </footer>
 </body>
 </html>
