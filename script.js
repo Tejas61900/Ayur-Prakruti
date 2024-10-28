@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let maxDosha = ''; // To hold the dominant dosha
 
     form.addEventListener('submit', function (e) {
-        e.preventDefault();
+        e.preventDefault(); // Prevent the default form submission behavior
 
         // Count dosha responses
         let doshaCount = { Vata: 0, Pitta: 0, Kapha: 0 };
@@ -21,10 +21,10 @@ document.addEventListener("DOMContentLoaded", function () {
         maxDosha = Object.keys(doshaCount).reduce((a, b) => doshaCount[a] > doshaCount[b] ? a : b);
         resultDiv.innerHTML = `Your dominant dosha is: <strong>${maxDosha}</strong>`;
 
-        // Show a confirmation dialog for certificate download
-        const userConfirmation = confirm("Would you like to fill in your details for the certificate?");
+        // Ask user if they want to download the certificate
+        const userConfirmation = confirm("Would you like to download your certificate?");
         if (userConfirmation) {
-            openDetailsWindow();
+            openDetailsWindow(); // Open the details window for certificate info
         }
     });
 
@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         };
 
                         // Close details window
-                        window.close();
+                        detailsWindow.close(); // Close the details window
                     });
                 </script>
             </body>
