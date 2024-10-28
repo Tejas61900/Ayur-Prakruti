@@ -28,4 +28,50 @@ document.getElementById("quiz-form").addEventListener("submit", function(event){
 
     // Display result
     document.getElementById("result").innerHTML = result;
+
+    // Generate Certificate
+    generateCertificate();
 });
+
+function generateCertificate() {
+    const name = document.getElementById("name").value;
+    const age = document.getElementById("age").value;
+    const sex = document.getElementById("sex").value;
+    const address = document.getElementById("address").value;
+
+    if (!name || !age || !sex || !address) {
+        alert("Please fill in all details.");
+        return;
+    }
+
+    // Certificate content
+    const certificateContent = `
+        <div class="certificate">
+            <h2>Prakruti Assessment Certificate</h2>
+            <p><strong>Name:</strong> ${name}</p>
+            <p><strong>Age:</strong> ${age}</p>
+            <p><strong>Sex:</strong> ${sex}</p>
+            <p><strong>Address:</strong> ${address}</p>
+            <p><strong>Prakriti Result:</strong> ${document.getElementById("result").innerText}</p>
+            <p>Thank you for completing the Prakruti Assessment!</p>
+        </div>
+    `;
+
+    // Open certificate in new window
+    const certificateWindow = window.open('', '_blank');
+    certificateWindow.document.write(`
+        <html>
+        <head>
+            <title>Certificate</title>
+            <link rel="stylesheet" href="style.css">
+            <style>
+                .certificate { padding: 30px; border: 5px solid #333; max-width: 600px; margin: auto; text-align: center; font-family: Arial, sans-serif; }
+                .certificate h2 { color: #4CAF50; }
+                .certificate p { font-size: 18px; }
+            </style>
+        </head>
+        <body>${certificateContent}</body></html>
+    `);
+    certificateWindow.document.close();
+    certificateWindow.print();
+}
