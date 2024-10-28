@@ -3,131 +3,327 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prakruti Assessment Questionnaire</title>
     <link rel="stylesheet" href="style.css">
+    <title>Prakruti Assessment Quiz</title>
 </head>
 <body>
-    <div class="quiz-container">
+    <header>
         <h1>Prakruti Assessment Questionnaire</h1>
-        
-        <form id="quiz-form">
-            <section class="question-section">
-                <h2>General Characteristics</h2>
+    </header>
+    <main>
+        <div class="quiz-container">
+            <form id="quiz-form">
+                <!-- General Characteristics -->
+                <h3>General Characteristics</h3>
 
-                <h3>1. Body Frame:</h3>
-                <label><input type="radio" name="question1" value="Vata"> Slim and light</label>
-                <label><input type="radio" name="question1" value="Pitta"> Medium and muscular</label>
-                <label><input type="radio" name="question1" value="Kapha"> Large and heavy</label>
+                <!-- Question 1 -->
+                <div class="question-section">
+                    <h4>1. Body Frame:</h4>
+                    <div class="option">
+                        <input type="radio" name="question1" id="q1-option1" value="Vata">
+                        <label for="q1-option1">a) Slim and light</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="question1" id="q1-option2" value="Pitta">
+                        <label for="q1-option2">b) Medium and muscular</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="question1" id="q1-option3" value="Kapha">
+                        <label for="q1-option3">c) Large and heavy</label>
+                    </div>
+                </div>
 
-                <h3>2. Skin Type:</h3>
-                <label><input type="radio" name="question2" value="Vata"> Dry, rough, prone to cracking</label>
-                <label><input type="radio" name="question2" value="Pitta"> Warm, reddish, prone to acne or rashes</label>
-                <label><input type="radio" name="question2" value="Kapha"> Smooth, oily, and moist</label>
+                <!-- Question 2 -->
+                <div class="question-section">
+                    <h4>2. Skin Type:</h4>
+                    <div class="option">
+                        <input type="radio" name="question2" id="q2-option1" value="Vata">
+                        <label for="q2-option1">a) Dry, rough, prone to cracking</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="question2" id="q2-option2" value="Pitta">
+                        <label for="q2-option2">b) Warm, reddish, prone to acne or rashes</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="question2" id="q2-option3" value="Kapha">
+                        <label for="q2-option3">c) Smooth, oily, and moist</label>
+                    </div>
+                </div>
 
-                <h3>3. Body Temperature:</h3>
-                <label><input type="radio" name="question3" value="Vata"> Often feel cold, hands and feet get cold easily</label>
-                <label><input type="radio" name="question3" value="Pitta"> Feel warm, sweat easily</label>
-                <label><input type="radio" name="question3" value="Kapha"> Feel cool but not cold, steady body temperature</label>
+                <!-- Question 3 -->
+                <div class="question-section">
+                    <h4>3. Body Temperature:</h4>
+                    <div class="option">
+                        <input type="radio" name="question3" id="q3-option1" value="Vata">
+                        <label for="q3-option1">a) Often feel cold, hands and feet get cold easily</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="question3" id="q3-option2" value="Pitta">
+                        <label for="q3-option2">b) Feel warm, sweat easily</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="question3" id="q3-option3" value="Kapha">
+                        <label for="q3-option3">c) Feel cool but not cold, steady body temperature</label>
+                    </div>
+                </div>
 
-                <h3>4. Energy Levels:</h3>
-                <label><input type="radio" name="question4" value="Vata"> Variable, with bursts of high energy followed by fatigue</label>
-                <label><input type="radio" name="question4" value="Pitta"> High energy and stamina, but prone to burning out</label>
-                <label><input type="radio" name="question4" value="Kapha"> Steady and enduring, but may feel lethargic</label>
-                
-                <h2>Mental Characteristics</h2>
+                <!-- Question 4 -->
+                <div class="question-section">
+                    <h4>4. Energy Levels:</h4>
+                    <div class="option">
+                        <input type="radio" name="question4" id="q4-option1" value="Vata">
+                        <label for="q4-option1">a) Variable, with bursts of high energy followed by fatigue</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="question4" id="q4-option2" value="Pitta">
+                        <label for="q4-option2">b) High energy and stamina, but prone to burning out</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="question4" id="q4-option3" value="Kapha">
+                        <label for="q4-option3">c) Steady and enduring, but may feel lethargic</label>
+                    </div>
+                </div>
 
-                <h3>5. Thought Process:</h3>
-                <label><input type="radio" name="question5" value="Vata"> Fast but scattered, find it hard to focus</label>
-                <label><input type="radio" name="question5" value="Pitta"> Sharp, focused, and critical</label>
-                <label><input type="radio" name="question5" value="Kapha"> Slow, steady, and methodical</label>
+                <!-- Mental Characteristics -->
+                <h3>Mental Characteristics</h3>
 
-                <h3>6. Memory:</h3>
-                <label><input type="radio" name="question6" value="Vata"> Quick to grasp, quick to forget</label>
-                <label><input type="radio" name="question6" value="Pitta"> Sharp and accurate recall</label>
-                <label><input type="radio" name="question6" value="Kapha"> Slow to learn, but excellent long-term memory</label>
+                <!-- Question 5 -->
+                <div class="question-section">
+                    <h4>5. Thought Process:</h4>
+                    <div class="option">
+                        <input type="radio" name="question5" id="q5-option1" value="Vata">
+                        <label for="q5-option1">a) Fast but scattered, find it hard to focus</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="question5" id="q5-option2" value="Pitta">
+                        <label for="q5-option2">b) Sharp, focused, and critical</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="question5" id="q5-option3" value="Kapha">
+                        <label for="q5-option3">c) Slow, steady, and methodical</label>
+                    </div>
+                </div>
 
-                <h3>7. Stress Response:</h3>
-                <label><input type="radio" name="question7" value="Vata"> Anxious, nervous, and worried easily</label>
-                <label><input type="radio" name="question7" value="Pitta"> Irritable, angry, and frustrated under stress</label>
-                <label><input type="radio" name="question7" value="Kapha"> Calm, but may withdraw or resist change</label>
-                
-                <h2>Dietary Preferences</h2>
+                <!-- Question 6 -->
+                <div class="question-section">
+                    <h4>6. Memory:</h4>
+                    <div class="option">
+                        <input type="radio" name="question6" id="q6-option1" value="Vata">
+                        <label for="q6-option1">a) Quick to grasp, quick to forget</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="question6" id="q6-option2" value="Pitta">
+                        <label for="q6-option2">b) Sharp and accurate recall</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="question6" id="q6-option3" value="Kapha">
+                        <label for="q6-option3">c) Slow to learn, but excellent long-term memory</label>
+                    </div>
+                </div>
 
-                <h3>8. Appetite:</h3>
-                <label><input type="radio" name="question8" value="Vata"> Irregular, sometimes strong, sometimes absent</label>
-                <label><input type="radio" name="question8" value="Pitta"> Strong, must eat regularly</label>
-                <label><input type="radio" name="question8" value="Kapha"> Steady, moderate</label>
+                <!-- Question 7 -->
+                <div class="question-section">
+                    <h4>7. Stress Response:</h4>
+                    <div class="option">
+                        <input type="radio" name="question7" id="q7-option1" value="Vata">
+                        <label for="q7-option1">a) Anxious, nervous, and worried easily</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="question7" id="q7-option2" value="Pitta">
+                        <label for="q7-option2">b) Irritable, angry, and frustrated under stress</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="question7" id="q7-option3" value="Kapha">
+                        <label for="q7-option3">c) Calm, but may withdraw or resist change</label>
+                    </div>
+                </div>
 
-                <h3>9. Food Preferences:</h3>
-                <label><input type="radio" name="question9" value="Vata"> Prefer warm, light, dry foods</label>
-                <label><input type="radio" name="question9" value="Pitta"> Prefer cool, spicy, and pungent foods</label>
-                <label><input type="radio" name="question9" value="Kapha"> Prefer warm, heavy, and sweet foods</label>
+                <!-- Dietary Preferences -->
+                <h3>Dietary Preferences</h3>
 
-                <h3>10. Digestion:</h3>
-                <label><input type="radio" name="question10" value="Vata"> Variable, prone to gas and bloating</label>
-                <label><input type="radio" name="question10" value="Pitta"> Strong, but prone to acidity or loose stools</label>
-                <label><input type="radio" name="question10" value="Kapha"> Slow, prone to sluggish digestion and constipation</label>
+                <!-- Question 8 -->
+                <div class="question-section">
+                    <h4>8. Appetite:</h4>
+                    <div class="option">
+                        <input type="radio" name="question8" id="q8-option1" value="Vata">
+                        <label for="q8-option1">a) Irregular, sometimes strong, sometimes absent</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="question8" id="q8-option2" value="Pitta">
+                        <label for="q8-option2">b) Strong, must eat regularly</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="question8" id="q8-option3" value="Kapha">
+                        <label for="q8-option3">c) Steady, moderate</label>
+                    </div>
+                </div>
 
-                <h2>Emotional Characteristics</h2>
+                <!-- Question 9 -->
+                <div class="question-section">
+                    <h4>9. Food Preferences:</h4>
+                    <div class="option">
+                        <input type="radio" name="question9" id="q9-option1" value="Vata">
+                        <label for="q9-option1">a) Prefer warm, light, dry foods</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="question9" id="q9-option2" value="Pitta">
+                        <label for="q9-option2">b) Prefer cool, spicy, and pungent foods</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="question9" id="q9-option3" value="Kapha">
+                        <label for="q9-option3">c) Prefer warm, heavy, and sweet foods</label>
+                    </div>
+                </div>
 
-                <h3>11. Emotional Nature:</h3>
-                <label><input type="radio" name="question11" value="Vata"> Sensitive, easily affected by environment and people</label>
-                <label><input type="radio" name="question11" value="Pitta"> Passionate, intense, and easily frustrated</label>
-                <label><input type="radio" name="question11" value="Kapha"> Calm, loving, and grounded</label>
+                <!-- Question 10 -->
+                <div class="question-section">
+                    <h4>10. Digestion:</h4>
+                    <div class="option">
+                        <input type="radio" name="question10" id="q10-option1" value="Vata">
+                        <label for="q10-option1">a) Variable, prone to gas and bloating</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="question10" id="q10-option2" value="Pitta">
+                        <label for="q10-option2">b) Strong, but prone to acidity or loose stools</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="question10" id="q10-option3" value="Kapha">
+                        <label for="q10-option3">c) Slow, prone to sluggish digestion and constipation</label>
+                    </div>
+                </div>
 
-                <h3>12. Sleep Patterns:</h3>
-                <label><input type="radio" name="question12" value="Vata"> Light sleeper, prone to insomnia</label>
-                <label><input type="radio" name="question12" value="Pitta"> Moderate sleep, disturbed by heat or stress</label>
-                <label><input type="radio" name="question12" value="Kapha"> Deep, heavy sleep, difficult to wake up</label>
+                <!-- Emotional Characteristics -->
+                <h3>Emotional Characteristics</h3>
 
-                <h2>Physical Activity</h2>
+                <!-- Question 11 -->
+                <div class="question-section">
+                    <h4>11. Emotional Nature:</h4>
+                    <div class="option">
+                        <input type="radio" name="question11" id="q11-option1" value="Vata">
+                        <label for="q11-option1">a) Sensitive, easily affected by environment and people</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="question11" id="q11-option2" value="Pitta">
+                        <label for="q11-option2">b) Passionate, intense, and easily frustrated</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="question11" id="q11-option3" value="Kapha">
+                        <label for="q11-option3">c) Calm, loving, and grounded</label>
+                    </div>
+                </div>
 
-                <h3>13. Exercise Preferences:</h3>
-                <label><input type="radio" name="question13" value="Vata"> Enjoy light, creative, or irregular activities like yoga or dancing</label>
-                <label><input type="radio" name="question13" value="Pitta"> Enjoy competitive, vigorous sports like running or strength training</label>
-                <label><input type="radio" name="question13" value="Kapha"> Prefer slow, steady, endurance-based activities like walking or swimming</label>
+                <!-- Question 12 -->
+                <div class="question-section">
+                    <h4>12. Sleep Patterns:</h4>
+                    <div class="option">
+                        <input type="radio" name="question12" id="q12-option1" value="Vata">
+                        <label for="q12-option1">a) Light sleeper, prone to insomnia</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="question12" id="q12-option2" value="Pitta">
+                        <label for="q12-option2">b) Moderate sleep, disturbed by heat or stress</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="question12" id="q12-option3" value="Kapha">
+                        <label for="q12-option3">c) Deep, heavy sleep, difficult to wake up</label>
+                    </div>
+                </div>
 
-                <h3>14. Physical Strength:</h3>
-                <label><input type="radio" name="question14" value="Vata"> Weak and fatigued easily</label>
-                <label><input type="radio" name="question14" value="Pitta"> Strong, but may overexert</label>
-                <label><input type="radio" name="question14" value="Kapha"> Strong and enduring, but may lack speed</label>
+                <!-- Physical Activity -->
+                <h3>Physical Activity</h3>
 
-                <h2>Hair and Nails</h2>
+                <!-- Question 13 -->
+                <div class="question-section">
+                    <h4>13. Exercise Preferences:</h4>
+                    <div class="option">
+                        <input type="radio" name="question13" id="q13-option1" value="Vata">
+                        <label for="q13-option1">a) Enjoy light, creative, or irregular activities like yoga or dancing</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="question13" id="q13-option2" value="Pitta">
+                        <label for="q13-option2">b) Enjoy competitive, vigorous sports like running or strength training</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="question13" id="q13-option3" value="Kapha">
+                        <label for="q13-option3">c) Prefer slow, steady, endurance-based activities like walking or swimming</label>
+                    </div>
+                </div>
 
-                <h3>15. Hair Type:</h3>
-                <label><input type="radio" name="question15" value="Vata"> Dry, frizzy, or thin</label>
-                <label><input type="radio" name="question15" value="Pitta"> Oily, fine, or prone to greying early</label>
-                <label><input type="radio" name="question15" value="Kapha"> Thick, lustrous, and oily</label>
+                <!-- Question 14 -->
+                <div class="question-section">
+                    <h4>14. Physical Strength:</h4>
+                    <div class="option">
+                        <input type="radio" name="question14" id="q14-option1" value="Vata">
+                        <label for="q14-option1">a) Weak and fatigued easily</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="question14" id="q14-option2" value="Pitta">
+                        <label for="q14-option2">b) Strong, but may overexert</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="question14" id="q14-option3" value="Kapha">
+                        <label for="q14-option3">c) Strong and enduring, but may lack speed</label>
+                    </div>
+                </div>
 
-                <h3>16. Nail Texture:</h3>
-                <label><input type="radio" name="question16" value="Vata"> Dry, brittle, rough</label>
-                <label><input type="radio" name="question16" value="Pitta"> Soft, sharp, or prone to inflammation</label>
-                <label><input type="radio" name="question16" value="Kapha"> Thick, smooth, and strong</label>
-            </section>
+                <!-- Hair and Nails -->
+                <h3>Hair and Nails</h3>
 
-            <!-- User information for certificate -->
-            <section class="user-info-section info">
-                <h2>Enter Your Details</h2>
-                <label for="name">Name:</label>
-                <input type="text" id="name" required>
+                <!-- Question 15 -->
+                <div class="question-section">
+                    <h4>15. Hair Type:</h4>
+                    <div class="option">
+                        <input type="radio" name="question15" id="q15-option1" value="Vata">
+                        <label for="q15-option1">a) Dry, frizzy, or thin</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="question15" id="q15-option2" value="Pitta">
+                        <label for="q15-option2">b) Oily, fine, or prone to greying early</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="question15" id="q15-option3" value="Kapha">
+                        <label for="q15-option3">c) Thick, lustrous, and oily</label>
+                    </div>
+                </div>
 
-                <label for="age">Age:</label>
-                <input type="number" id="age" required>
+                <!-- Question 16 -->
+                <div class="question-section">
+                    <h4>16. Nail Texture:</h4>
+                    <div class="option">
+                        <input type="radio" name="question16" id="q16-option1" value="Vata">
+                        <label for="q16-option1">a) Dry, brittle, rough</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="question16" id="q16-option2" value="Pitta">
+                        <label for="q16-option2">b) Soft, sharp, or prone to inflammation</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="question16" id="q16-option3" value="Kapha">
+                        <label for="q16-option3">c) Thick, smooth, and strong</label>
+                    </div>
+                </div>
 
-                <label for="sex">Sex:</label>
-                <select id="sex" required>
-                    <option value="">Select</option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                    <option value="Other">Other</option>
-                </select>
+                <button type="submit">Submit Quiz</button>
+            </form>
+            <div id="result" style="margin-top: 20px; font-weight: bold;"></div>
+        </div>
 
-                <label for="address">Address:</label>
-                <input type="text" id="address" required>
+        <div class="certificate-section" style="display:none; margin-top: 20px;">
+            <h3>Download Your Certificate</h3>
+            <p>Please fill in the details below to receive your certificate.</p>
+            <input type="text" id="name" placeholder="Your Name">
+            <input type="number" id="age" placeholder="Your Age">
+            <select id="sex">
+                <option value="">Select Sex</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+            <input type="text" id="address" placeholder="Your Address">
+            <button id="downloadBtn">Download Certificate</button>
+        </div>
+    </main>
 
-                <button type="submit">Submit</button>
-            </section>
-        </form>
-    </div>
+    <script src="script.js"></script>
 </body>
 </html>
