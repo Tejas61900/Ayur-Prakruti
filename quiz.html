@@ -3,130 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prakriti Assessment Quiz</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Style for quiz page background */
-        body {
-            background-image: url('prakriti-background.jpg'); /* Set the background image */
-            background-size: cover; /* Make the background cover the whole page */
-            background-position: center; /* Center the background */
-            background-attachment: fixed; /* Fix the background while scrolling */
-        }
-
-        #quiz-form {
-            background-color: rgba(255, 255, 255, 0.8); /* White background with 80% opacity */
-            border-radius: 8px; /* Rounded corners */
-            padding: 20px; /* Padding for quiz form */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Light shadow */
-            max-width: 800px; /* Maximum width for quiz */
-            margin: 20px auto; /* Centering quiz form */
-        }
-
-        h2 {
-            margin-top: 20px;
-        }
-    </style>
+    <title>Prakruti Assessment Questionnaire</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="hero">
-        <div class="hero-content">
-            <h1>Prakriti Assessment</h1>
-            <p>Discover your Dosha through this simple quiz</p>
-        </div>
-    </header>
+    <div class="quiz-container">
+        <h1>Prakruti Assessment Questionnaire</h1>
+        
+        <form id="quiz-form">
+            <section class="question-section">
+                <h2>General Characteristics</h2>
 
-    <main>
-        <form id="quiz-form" onsubmit="return validateForm()">
-            <h2>Physical Characteristics</h2>
-            
-            <h3>1. What is your body frame like?</h3>
-            <label><input type="radio" name="frame" value="Vata" required> Thin and bony</label><br>
-            <label><input type="radio" name="frame" value="Pitta" required> Medium and athletic</label><br>
-            <label><input type="radio" name="frame" value="Kapha" required> Broad and heavy</label><br>
+                <h3>1. Body Frame:</h3>
+                <label><input type="radio" name="question1" value="Vata"> Slim and light</label>
+                <label><input type="radio" name="question1" value="Pitta"> Medium and muscular</label>
+                <label><input type="radio" name="question1" value="Kapha"> Large and heavy</label>
 
-            <h3>2. How is your skin texture?</h3>
-            <label><input type="radio" name="skin" value="Vata" required> Dry and rough</label><br>
-            <label><input type="radio" name="skin" value="Pitta" required> Warm and oily</label><br>
-            <label><input type="radio" name="skin" value="Kapha" required> Soft and moist</label><br>
+                <h3>2. Skin Type:</h3>
+                <label><input type="radio" name="question2" value="Vata"> Dry, rough, prone to cracking</label>
+                <label><input type="radio" name="question2" value="Pitta"> Warm, reddish, prone to acne or rashes</label>
+                <label><input type="radio" name="question2" value="Kapha"> Smooth, oily, and moist</label>
 
-            <h3>3. How is your hair type?</h3>
-            <label><input type="radio" name="hair" value="Vata" required> Thin and dry</label><br>
-            <label><input type="radio" name="hair" value="Pitta" required> Medium and smooth</label><br>
-            <label><input type="radio" name="hair" value="Kapha" required> Thick and oily</label><br>
+                <h3>3. Body Temperature:</h3>
+                <label><input type="radio" name="question3" value="Vata"> Often feel cold, hands and feet get cold easily</label>
+                <label><input type="radio" name="question3" value="Pitta"> Feel warm, sweat easily</label>
+                <label><input type="radio" name="question3" value="Kapha"> Feel cool but not cold, steady body temperature</label>
 
-            <h3>4. What is your body temperature like?</h3>
-            <label><input type="radio" name="temperature" value="Vata" required> Usually cold</label><br>
-            <label><input type="radio" name="temperature" value="Pitta" required> Warm and hot</label><br>
-            <label><input type="radio" name="temperature" value="Kapha" required> Cool and comfortable</label><br>
+                <h3>4. Energy Levels:</h3>
+                <label><input type="radio" name="question4" value="Vata"> Variable, with bursts of high energy followed by fatigue</label>
+                <label><input type="radio" name="question4" value="Pitta"> High energy and stamina, but prone to burning out</label>
+                <label><input type="radio" name="question4" value="Kapha"> Steady and enduring, but may feel lethargic</label>
+                
+                <h2>Mental Characteristics</h2>
 
-            <h3>5. How is your digestion?</h3>
-            <label><input type="radio" name="digestion" value="Vata" required> Irregular and variable</label><br>
-            <label><input type="radio" name="digestion" value="Pitta" required> Strong and fast</label><br>
-            <label><input type="radio" name="digestion" value="Kapha" required> Slow and steady</label><br>
+                <h3>5. Thought Process:</h3>
+                <label><input type="radio" name="question5" value="Vata"> Fast but scattered, find it hard to focus</label>
+                <label><input type="radio" name="question5" value="Pitta"> Sharp, focused, and critical</label>
+                <label><input type="radio" name="question5" value="Kapha"> Slow, steady, and methodical</label>
 
-            <!-- Section 2: Mental Characteristics -->
-            <h2>Mental Characteristics</h2>
+                <h3>6. Memory:</h3>
+                <label><input type="radio" name="question6" value="Vata"> Quick to grasp, quick to forget</label>
+                <label><input type="radio" name="question6" value="Pitta"> Sharp and accurate recall</label>
+                <label><input type="radio" name="question6" value="Kapha"> Slow to learn, but excellent long-term memory</label>
 
-            <h3>6. How do you react under stress?</h3>
-            <label><input type="radio" name="stress" value="Vata" required> Anxious, worry a lot</label><br>
-            <label><input type="radio" name="stress" value="Pitta" required> Irritated, easily frustrated</label><br>
-            <label><input type="radio" name="stress" value="Kapha" required> Calm and patient</label><br>
+                <h3>7. Stress Response:</h3>
+                <label><input type="radio" name="question7" value="Vata"> Anxious, nervous, and worried easily</label>
+                <label><input type="radio" name="question7" value="Pitta"> Irritable, angry, and frustrated under stress</label>
+                <label><input type="radio" name="question7" value="Kapha"> Calm, but may withdraw or resist change</label>
+                
+                <h2>Dietary Preferences</h2>
 
-            <h3>7. How is your memory?</h3>
-            <label><input type="radio" name="memory" value="Vata" required> Quick but forgetful</label><br>
-            <label><input type="radio" name="memory" value="Pitta" required> Sharp and focused</label><br>
-            <label><input type="radio" name="memory" value="Kapha" required> Good but slow</label><br>
+                <h3>8. Appetite:</h3>
+                <label><input type="radio" name="question8" value="Vata"> Irregular, sometimes strong, sometimes absent</label>
+                <label><input type="radio" name="question8" value="Pitta"> Strong, must eat regularly</label>
+                <label><input type="radio" name="question8" value="Kapha"> Steady, moderate</label>
 
-            <h3>8. How do you approach new experiences?</h3>
-            <label><input type="radio" name="experience" value="Vata" required> Excited and adventurous</label><br>
-            <label><input type="radio" name="experience" value="Pitta" required> Confident and driven</label><br>
-            <label><input type="radio" name="experience" value="Kapha" required> Cautious and reserved</label><br>
+                <h3>9. Food Preferences:</h3>
+                <label><input type="radio" name="question9" value="Vata"> Prefer warm, light, dry foods</label>
+                <label><input type="radio" name="question9" value="Pitta"> Prefer cool, spicy, and pungent foods</label>
+                <label><input type="radio" name="question9" value="Kapha"> Prefer warm, heavy, and sweet foods</label>
 
-            <h3>9. How do you feel about change?</h3>
-            <label><input type="radio" name="change" value="Vata" required> Thrilled and eager</label><br>
-            <label><input type="radio" name="change" value="Pitta" required> Ready to take action</label><br>
-            <label><input type="radio" name="change" value="Kapha" required> Uncomfortable and resistant</label><br>
+                <h3>10. Digestion:</h3>
+                <label><input type="radio" name="question10" value="Vata"> Variable, prone to gas and bloating</label>
+                <label><input type="radio" name="question10" value="Pitta"> Strong, but prone to acidity or loose stools</label>
+                <label><input type="radio" name="question10" value="Kapha"> Slow, prone to sluggish digestion and constipation</label>
 
-            <h3>10. How would you describe your mood?</h3>
-            <label><input type="radio" name="mood" value="Vata" required> Variable, often changeable</label><br>
-            <label><input type="radio" name="mood" value="Pitta" required> Intense and passionate</label><br>
-            <label><input type="radio" name="mood" value="Kapha" required> Stable and peaceful</label><br>
+                <h2>Emotional Characteristics</h2>
 
-            <!-- Additional sections here -->
-            <!-- Each section has a title and similar radio button input structure -->
-            
+                <h3>11. Emotional Nature:</h3>
+                <label><input type="radio" name="question11" value="Vata"> Sensitive, easily affected by environment and people</label>
+                <label><input type="radio" name="question11" value="Pitta"> Passionate, intense, and easily frustrated</label>
+                <label><input type="radio" name="question11" value="Kapha"> Calm, loving, and grounded</label>
+
+                <h3>12. Sleep Patterns:</h3>
+                <label><input type="radio" name="question12" value="Vata"> Light sleeper, prone to insomnia</label>
+                <label><input type="radio" name="question12" value="Pitta"> Moderate sleep, disturbed by heat or stress</label>
+                <label><input type="radio" name="question12" value="Kapha"> Deep, heavy sleep, difficult to wake up</label>
+
+                <h2>Physical Activity</h2>
+
+                <h3>13. Exercise Preferences:</h3>
+                <label><input type="radio" name="question13" value="Vata"> Enjoy light, creative, or irregular activities like yoga or dancing</label>
+                <label><input type="radio" name="question13" value="Pitta"> Enjoy competitive, vigorous sports like running or strength training</label>
+                <label><input type="radio" name="question13" value="Kapha"> Prefer slow, steady, endurance-based activities like walking or swimming</label>
+
+                <h3>14. Physical Strength:</h3>
+                <label><input type="radio" name="question14" value="Vata"> Weak and fatigued easily</label>
+                <label><input type="radio" name="question14" value="Pitta"> Strong, but may overexert</label>
+                <label><input type="radio" name="question14" value="Kapha"> Strong and enduring, but may lack speed</label>
+
+                <h2>Hair and Nails</h2>
+
+                <h3>15. Hair Type:</h3>
+                <label><input type="radio" name="question15" value="Vata"> Dry, frizzy, or thin</label>
+                <label><input type="radio" name="question15" value="Pitta"> Oily, fine, or prone to greying early</label>
+                <label><input type="radio" name="question15" value="Kapha"> Thick, lustrous, and oily</label>
+
+                <h3>16. Nail Texture:</h3>
+                <label><input type="radio" name="question16" value="Vata"> Dry, brittle, rough</label>
+                <label><input type="radio" name="question16" value="Pitta"> Soft, sharp, or prone to inflammation</label>
+                <label><input type="radio" name="question16" value="Kapha"> Thick, smooth, and strong</label>
+            </section>
+
+            <!-- Display the result after submission -->
+            <div id="result"></div>
+
+            <!-- User information for certificate -->
+            <section class="user-info-section info">
+                <h2>Enter Your Details</h2>
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+
+                <label for="age">Age:</label>
+                <input type="number" id="age" required>
+
+                <label for="sex">Sex:</label>
+                <select id="sex" required>
+                    <option value="">Select</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <label for="address">Address:</label>
+                <input type="text" id="address" required>
+            </section>
+
             <button type="submit">Submit</button>
         </form>
-    </main>
+    </div>
 
-    <script>
-        function validateForm() {
-            var form = document.getElementById("quiz-form");
-            var inputs = form.querySelectorAll("input[type='radio']");
-            var valid = true;
-
-            for (var i = 0; i < inputs.length; i++) {
-                var name = inputs[i].name;
-                var radios = document.getElementsByName(name);
-                var hasChecked = false;
-
-                for (var j = 0; j < radios.length; j++) {
-                    if (radios[j].checked) {
-                        hasChecked = true;
-                        break;
-                    }
-                }
-
-                if (!hasChecked) {
-                    alert("Please answer all questions.");
-                    valid = false;
-                    break;
-                }
-            }
-
-            return valid;
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
