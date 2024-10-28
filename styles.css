@@ -10,7 +10,7 @@ body {
 
 /* Hero section styles */
 .hero {
-    background-image: url('/hero-background.jpg'); /* Hero image in root directory */
+    background-image: url('hero-background.jpg'); /* Hero image in root directory */
     background-size: cover; /* Cover the entire area */
     background-position: center; /* Center the background image */
     height: 60vh; /* Height of hero section */
