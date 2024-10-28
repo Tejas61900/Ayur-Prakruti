@@ -57,15 +57,33 @@ document.addEventListener("DOMContentLoaded", function () {
                 <title>Certificate</title>
                 <link rel="stylesheet" href="style.css">
                 <style>
-                    .certificate { padding: 30px; border: 5px solid #333; max-width: 600px; margin: auto; text-align: center; font-family: Arial, sans-serif; }
-                    .certificate h2 { color: #4CAF50; }
-                    .certificate p { font-size: 18px; }
+                    .certificate {
+                        padding: 40px;
+                        border: 10px solid #4CAF50; /* Green border */
+                        max-width: 700px;
+                        margin: auto;
+                        text-align: center;
+                        font-family: 'Arial', sans-serif;
+                        background-color: #f9f9f9; /* Light background */
+                        border-radius: 10px; /* Rounded corners */
+                        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+                    }
+                    .certificate h2 {
+                        color: #4CAF50; /* Green color for the title */
+                        font-size: 36px; /* Larger font for the title */
+                        margin-bottom: 20px;
+                    }
+                    .certificate p {
+                        font-size: 20px; /* Slightly larger font for content */
+                        margin: 10px 0; /* Spacing between paragraphs */
+                    }
                 </style>
             </head>
             <body>${certificateContent}</body>
             </html>
         `);
         certificateWindow.document.close();
+        certificateWindow.focus(); // Focus the new window
         certificateWindow.print(); // Prompt the user to print the certificate
     });
 });
