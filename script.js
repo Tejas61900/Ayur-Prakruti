@@ -1,8 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById('quiz-form');
     const resultDiv = document.getElementById('result');
-    const certificateSection = document.querySelector('.certificate-section');
-    const downloadBtn = document.getElementById('downloadBtn');
     let maxDosha = ''; // To hold the dominant dosha
 
     form.addEventListener('submit', function (e) {
@@ -24,57 +22,96 @@ document.addEventListener("DOMContentLoaded", function () {
         resultDiv.innerHTML = `Your dominant dosha is: <strong>${maxDosha}</strong>`;
 
         // Show a confirmation dialog for certificate download
-        const userConfirmation = confirm("Would you like to download your certificate?");
+        const userConfirmation = confirm("Would you like to fill in your details for the certificate?");
         if (userConfirmation) {
-            certificateSection.style.display = 'block'; // Show the certificate section
-            openCertificateWindow();
+            openDetailsWindow();
         }
     });
 
-    function openCertificateWindow() {
-        const name = document.getElementById('name').value.trim();
-        const age = document.getElementById('age').value.trim();
-        const sex = document.getElementById('sex').value;
-        const address = document.getElementById('address').value.trim();
-
-        // Check if all fields are filled
-        if (!name || !age || !sex || !address) {
-            alert("Please fill in all details before generating the certificate.");
-            return; // Exit if validation fails
-        }
-
-        // Create certificate content
-        const certificateContent = `
-            <div class="certificate">
-                <h2>Prakruti Assessment Certificate</h2>
-                <p><strong>Name:</strong> ${name}</p>
-                <p><strong>Age:</strong> ${age}</p>
-                <p><strong>Sex:</strong> ${sex}</p>
-                <p><strong>Address:</strong> ${address}</p>
-                <p><strong>Prakriti Result:</strong> ${maxDosha}</p>
-                <p>Thank you for completing the Prakruti Assessment!</p>
-            </div>
-        `;
-
-        // Open certificate in new window
-        const certificateWindow = window.open('', '_blank');
-        certificateWindow.document.write(`
+    function openDetailsWindow() {
+        const detailsWindow = window.open('', '_blank', 'width=600,height=400');
+        detailsWindow.document.write(`
             <html>
             <head>
-                <title>Certificate</title>
+                <title>Certificate Details</title>
                 <link rel="stylesheet" href="style.css">
                 <style>
-                    .certificate { padding: 30px; border: 5px solid #333; max-width: 600px; margin: auto; text-align: center; font-family: Arial, sans-serif; }
-                    .certificate h2 { color: #4CAF50; }
-                    .certificate p { font-size: 18px; }
+                    body { font-family: Arial, sans-serif; padding: 20px; }
+                    h2 { color: #4CAF50; }
+                    input { width: 100%; padding: 10px; margin: 5px 0; }
+                    button { background-color: #007BFF; color: white; padding: 10px; border: none; border-radius: 5px; cursor: pointer; }
+                    button:hover { background-color: #0056b3; }
                 </style>
             </head>
-            <body>${certificateContent}</body>
+            <body>
+                <h2>Fill Your Details</h2>
+                <label>Name: <input type="text" id="name"></label>
+                <label>Age: <input type="number" id="age"></label>
+                <label>Sex: 
+                    <select id="sex">
+                        <option value="">Select</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </label>
+                <label>Address: <input type="text" id="address"></label>
+                <button id="generateCertificate">Generate Certificate</button>
+
+                <script>
+                    document.getElementById('generateCertificate').addEventListener('click', function () {
+                        const name = document.getElementById('name').value.trim();
+                        const age = document.getElementById('age').value.trim();
+                        const sex = document.getElementById('sex').value;
+                        const address = document.getElementById('address').value.trim();
+
+                        // Check if all fields are filled
+                        if (!name || !age || !sex || !address) {
+                            alert("Please fill in all details.");
+                            return; // Exit the function if validation fails
+                        }
+
+                        // Create certificate content
+                        const certificateContent = `
+                            <div class="certificate">
+                                <h2>Prakruti Assessment Certificate</h2>
+                                <p><strong>Name:</strong> ${name}</p>
+                                <p><strong>Age:</strong> ${age}</p>
+                                <p><strong>Sex:</strong> ${sex}</p>
+                                <p><strong>Address:</strong> ${address}</p>
+                                <p><strong>Prakriti Result:</strong> ${maxDosha}</p>
+                                <p>Thank you for completing the Prakruti Assessment!</p>
+                            </div>
+                        `;
+
+                        // Open certificate in a new window
+                        const certificateWindow = window.open('', '_blank');
+                        certificateWindow.document.write(`
+                            <html>
+                            <head>
+                                <title>Certificate</title>
+                                <link rel="stylesheet" href="style.css">
+                                <style>
+                                    .certificate { padding: 30px; border: 5px solid #333; max-width: 600px; margin: auto; text-align: center; font-family: Arial, sans-serif; }
+                                    .certificate h2 { color: #4CAF50; }
+                                    .certificate p { font-size: 18px; }
+                                </style>
+                            </head>
+                            <body>${certificateContent}</body>
+                            </html>
+                        `);
+                        certificateWindow.document.close();
+                        certificateWindow.onload = function() {
+                            certificateWindow.print(); // Prompt the user to print the certificate
+                        };
+
+                        // Close details window
+                        window.close();
+                    });
+                </script>
+            </body>
             </html>
         `);
-        certificateWindow.document.close();
-        certificateWindow.onload = function() {
-            certificateWindow.print(); // Prompt the user to print the certificate
-        };
+        detailsWindow.document.close();
     }
 });
