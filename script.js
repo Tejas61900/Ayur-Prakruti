@@ -1,77 +1,64 @@
-document.getElementById("quiz-form").addEventListener("submit", function(event){
-    event.preventDefault();
-    
-    // Gather user inputs
-    const elements = document.getElementById("quiz-form").elements;
-    let vataCount = 0, pittaCount = 0, kaphaCount = 0;
-    
-    // Loop through each question's answers
-    for (let i = 0; i < elements.length; i++) {
-        if (elements[i].checked) {
-            if (elements[i].value === "Vata") vataCount++;
-            if (elements[i].value === "Pitta") pittaCount++;
-            if (elements[i].value === "Kapha") kaphaCount++;
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById('quiz-form');
+    const resultDiv = document.getElementById('result');
+    const certificateSection = document.querySelector('.certificate-section');
+    const downloadBtn = document.getElementById('downloadBtn');
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        // Count dosha responses
+        let doshaCount = { Vata: 0, Pitta: 0, Kapha: 0 };
+
+        // Loop through all questions and count the selected doshas
+        for (let i = 1; i <= 16; i++) {
+            const selectedOption = document.querySelector(`input[name="question${i}"]:checked`);
+            if (selectedOption) {
+                doshaCount[selectedOption.value]++;
+            }
         }
-    }
 
-    // Determine dominant Prakriti
-    let result = "";
-    if (vataCount > pittaCount && vataCount > kaphaCount) {
-        result = "Your dominant Prakriti is Vata.";
-    } else if (pittaCount > vataCount && pittaCount > kaphaCount) {
-        result = "Your dominant Prakriti is Pitta.";
-    } else if (kaphaCount > vataCount && kaphaCount > pittaCount) {
-        result = "Your dominant Prakriti is Kapha.";
-    } else {
-        result = "You have a balanced Prakriti.";
-    }
+        // Display the results
+        const maxDosha = Object.keys(doshaCount).reduce((a, b) => doshaCount[a] > doshaCount[b] ? a : b);
+        resultDiv.innerHTML = `Your dominant dosha is: <strong>${maxDosha}</strong>`;
+        certificateSection.style.display = 'block'; // Show the certificate section
+    });
 
-    // Display result
-    document.getElementById("result").innerHTML = result;
+    downloadBtn.addEventListener('click', function () {
+        const name = document.getElementById('name').value.trim();
+        const age = document.getElementById('age').value.trim();
+        const sex = document.getElementById('sex').value;
+        const address = document.getElementById('address').value.trim();
 
-    // Generate Certificate
-    generateCertificate();
+        // Check if all fields are filled
+        if (!name || !age || !sex || !address) {
+            alert("Please fill in all details.");
+            return; // Exit the function if validation fails
+        }
+
+        // Create a certificate as a canvas
+        const certificate = document.createElement('canvas');
+        const ctx = certificate.getContext('2d');
+        certificate.width = 800;
+        certificate.height = 600;
+
+        // Draw the certificate background
+        ctx.fillStyle = "#ffffff";
+        ctx.fillRect(0, 0, certificate.width, certificate.height);
+        ctx.fillStyle = "#000000";
+        ctx.font = "30px Arial";
+        ctx.fillText("Certificate of Prakruti Assessment", 50, 100);
+        ctx.font = "20px Arial";
+        ctx.fillText(`Name: ${name}`, 50, 200);
+        ctx.fillText(`Age: ${age}`, 50, 240);
+        ctx.fillText(`Sex: ${sex}`, 50, 280);
+        ctx.fillText(`Address: ${address}`, 50, 320);
+        ctx.fillText(`Your dominant dosha is: ${maxDosha}`, 50, 360);
+
+        // Convert to image and download
+        const link = document.createElement('a');
+        link.href = certificate.toDataURL();
+        link.download = `${name}-certificate.png`;
+        link.click();
+    });
 });
-
-function generateCertificate() {
-    const name = document.getElementById("name").value;
-    const age = document.getElementById("age").value;
-    const sex = document.getElementById("sex").value;
-    const address = document.getElementById("address").value;
-
-    if (!name || !age || !sex || !address) {
-        alert("Please fill in all details.");
-        return;
-    }
-
-    // Certificate content
-    const certificateContent = `
-        <div class="certificate">
-            <h2>Prakruti Assessment Certificate</h2>
-            <p><strong>Name:</strong> ${name}</p>
-            <p><strong>Age:</strong> ${age}</p>
-            <p><strong>Sex:</strong> ${sex}</p>
-            <p><strong>Address:</strong> ${address}</p>
-            <p><strong>Prakriti Result:</strong> ${document.getElementById("result").innerText}</p>
-            <p>Thank you for completing the Prakruti Assessment!</p>
-        </div>
-    `;
-
-    // Open certificate in new window
-    const certificateWindow = window.open('', '_blank');
-    certificateWindow.document.write(`
-        <html>
-        <head>
-            <title>Certificate</title>
-            <link rel="stylesheet" href="style.css">
-            <style>
-                .certificate { padding: 30px; border: 5px solid #333; max-width: 600px; margin: auto; text-align: center; font-family: Arial, sans-serif; }
-                .certificate h2 { color: #4CAF50; }
-                .certificate p { font-size: 18px; }
-            </style>
-        </head>
-        <body>${certificateContent}</body></html>
-    `);
-    certificateWindow.document.close();
-    certificateWindow.print();
-}
