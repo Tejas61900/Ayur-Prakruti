@@ -2,7 +2,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById('quiz-form');
     const resultDiv = document.getElementById('result');
     const certificateSection = document.querySelector('.certificate-section');
-    
+    const downloadBtn = document.getElementById('downloadBtn');
+    let maxDosha = ''; // To hold the dominant dosha
+
     form.addEventListener('submit', function (e) {
         e.preventDefault();
 
@@ -17,77 +19,62 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
 
-        // Display the results
-        const maxDosha = Object.keys(doshaCount).reduce((a, b) => doshaCount[a] > doshaCount[b] ? a : b);
+        // Determine the dominant dosha
+        maxDosha = Object.keys(doshaCount).reduce((a, b) => doshaCount[a] > doshaCount[b] ? a : b);
         resultDiv.innerHTML = `Your dominant dosha is: <strong>${maxDosha}</strong>`;
-        certificateSection.style.display = 'block'; // Show the certificate section
 
-        // Prompt for user details
-        const name = prompt("Please enter your name:");
-        const age = prompt("Please enter your age:");
-        const sex = prompt("Please enter your sex (M/F/Other):");
-        const address = prompt("Please enter your address:");
+        // Show a confirmation dialog for certificate download
+        const userConfirmation = confirm("Would you like to download your certificate?");
+        if (userConfirmation) {
+            certificateSection.style.display = 'block'; // Show the certificate section
+            openCertificateWindow();
+        }
+    });
+
+    function openCertificateWindow() {
+        const name = document.getElementById('name').value.trim();
+        const age = document.getElementById('age').value.trim();
+        const sex = document.getElementById('sex').value;
+        const address = document.getElementById('address').value.trim();
 
         // Check if all fields are filled
         if (!name || !age || !sex || !address) {
-            alert("All details must be filled to generate the certificate.");
-            return; // Exit the function if validation fails
+            alert("Please fill in all details before generating the certificate.");
+            return; // Exit if validation fails
         }
 
-        // Ask if they want to download the certificate
-        const downloadConfirm = confirm("Do you want to download your certificate?");
-        if (downloadConfirm) {
-            // Create certificate content
-            const certificateContent = `
-                <div class="certificate">
-                    <h2>Prakruti Assessment Certificate</h2>
-                    <p><strong>Name:</strong> ${name}</p>
-                    <p><strong>Age:</strong> ${age}</p>
-                    <p><strong>Sex:</strong> ${sex}</p>
-                    <p><strong>Address:</strong> ${address}</p>
-                    <p><strong>Prakriti Result:</strong> ${maxDosha}</p>
-                    <p>Thank you for completing the Prakruti Assessment!</p>
-                </div>
-            `;
+        // Create certificate content
+        const certificateContent = `
+            <div class="certificate">
+                <h2>Prakruti Assessment Certificate</h2>
+                <p><strong>Name:</strong> ${name}</p>
+                <p><strong>Age:</strong> ${age}</p>
+                <p><strong>Sex:</strong> ${sex}</p>
+                <p><strong>Address:</strong> ${address}</p>
+                <p><strong>Prakriti Result:</strong> ${maxDosha}</p>
+                <p>Thank you for completing the Prakruti Assessment!</p>
+            </div>
+        `;
 
-            // Open certificate in new window
-            const certificateWindow = window.open('', '_blank');
-            certificateWindow.document.write(`
-                <html>
-                <head>
-                    <title>Certificate</title>
-                    <link rel="stylesheet" href="style.css">
-                    <style>
-                        .certificate {
-                            padding: 40px;
-                            border: 10px solid #4CAF50; /* Green border */
-                            max-width: 700px;
-                            margin: auto;
-                            text-align: center;
-                            font-family: 'Arial', sans-serif;
-                            background-color: #f9f9f9; /* Light background */
-                            border-radius: 10px; /* Rounded corners */
-                            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-                        }
-                        .certificate h2 {
-                            color: #4CAF50; /* Green color for the title */
-                            font-size: 36px; /* Larger font for the title */
-                            margin-bottom: 20px;
-                        }
-                        .certificate p {
-                            font-size: 20px; /* Slightly larger font for content */
-                            margin: 10px 0; /* Spacing between paragraphs */
-                        }
-                    </style>
-                </head>
-                <body>${certificateContent}</body>
-                </html>
-            `);
-            certificateWindow.document.close();
-            certificateWindow.focus(); // Focus the new window
+        // Open certificate in new window
+        const certificateWindow = window.open('', '_blank');
+        certificateWindow.document.write(`
+            <html>
+            <head>
+                <title>Certificate</title>
+                <link rel="stylesheet" href="style.css">
+                <style>
+                    .certificate { padding: 30px; border: 5px solid #333; max-width: 600px; margin: auto; text-align: center; font-family: Arial, sans-serif; }
+                    .certificate h2 { color: #4CAF50; }
+                    .certificate p { font-size: 18px; }
+                </style>
+            </head>
+            <body>${certificateContent}</body>
+            </html>
+        `);
+        certificateWindow.document.close();
+        certificateWindow.onload = function() {
             certificateWindow.print(); // Prompt the user to print the certificate
-        } else {
-            alert("You chose not to download the certificate.");
-        }
-    });
+        };
+    }
 });
