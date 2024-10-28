@@ -36,13 +36,14 @@ h1 {
     margin-top: 1.5em;
 }
 
-label {
-    display: block;
-    margin: 0.5em 0;
+.option {
+    display: flex; /* Use flexbox for options */
+    align-items: center; /* Center items vertically */
+    margin-bottom: 1em; /* Space between options */
 }
 
-.info label {
-    margin-top: 1em;
+.option input[type="radio"] {
+    margin-right: 10px; /* Space between radio button and label */
 }
 
 button {
